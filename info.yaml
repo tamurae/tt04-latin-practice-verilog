@@ -6,7 +6,7 @@ project:
 # If using an HDL, set wokwi_id as 0 and uncomment and list your source files here. 
 # Source files must be in ./src and you must list each source file separately
   source_files:
-    - mult4x4.v
+    - tt_um_mult4x4.v
     - mult_control.v
     - mux2.v
     - mult2x2.v
@@ -14,7 +14,7 @@ project:
     - adder.v
     - counter.v
     - reg8.v
-  top_module:  "mult4x4"      # put the name of your top module here, make it unique by prepending your github username
+  top_module:  "tt_um_mult4x4"      # put the name of your top module here, make it unique by prepending your github username
 
 # How many tiles your design occupies? A single tile is about 167x108 uM.
 # Before changing this, please reach out to us on discord to discuss your design.
