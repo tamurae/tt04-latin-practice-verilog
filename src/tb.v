@@ -56,7 +56,9 @@ module tb ();
     .dataa(dataa),
     .datab(datab),
     .done_flag(done_flag),
-    .product4x4_out(product4x4_out)
+    .product4x4_out(product4x4_out),
+    .ena(ena),
+    .rst_n(rst_n)
   );
 
 endmodule
