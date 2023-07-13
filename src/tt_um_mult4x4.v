@@ -13,6 +13,8 @@ module tt_um_mult4x4
                 datab,
   output        done_flag,      // Declare done_flag output
   output [7:0]  product4x4_out  // Declare multiplier output "product4x4_out"
+  input         ena,            // will go high when the design is enabled
+                rst_n           // reset_n - low to reset
 );
 
   // Declare internal wires to connect modules
