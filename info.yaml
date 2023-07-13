@@ -5,11 +5,11 @@ project:
 
 # If using an HDL, set wokwi_id as 0 and uncomment and list your source files here. 
 # Source files must be in ./src and you must list each source file separately
-  source_files:        
+  source_files:
     - mult4x4.v
     - mult_control.v
     - mux2.v
-		- mult2x2.v
+    - mult2x2.v
     - shifter.v
     - adder.v
     - counter.v
