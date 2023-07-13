@@ -4,7 +4,7 @@
 //
 //****************************************************************************
 
-module mult4x4
+module tt_um_mult4x4
 (
   input         start,          // Declare control inputs: start
                 reset_a,        //    asynchronous reset
