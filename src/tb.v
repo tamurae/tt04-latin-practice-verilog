@@ -44,7 +44,7 @@ module tb ();
   assign uio_oe = 8'b1000000;
 
   // Instantiate DUT
-  mult4x4 mult4x4_1
+  tt_um_mult4x4 mult4x4
   (
     `ifdef GL_TEST
         .vccd1( 1'b1),
