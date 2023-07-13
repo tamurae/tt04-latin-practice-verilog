@@ -12,7 +12,7 @@ PDK_ROOT = ~/.volare
 ifneq ($(GATES),yes)
 
 # this is the only part you should need to modify:
-VERILOG_SOURCES += $(PWD)/tb.v $(PWD)/mult4x4.v $(PWD)/mult_control.v $(PWD)/mux2.v \
+VERILOG_SOURCES += $(PWD)/tb.v $(PWD)/tt_um_mult4x4.v $(PWD)/mult_control.v $(PWD)/mux2.v \
 		$(PWD)/mult2x2.v $(PWD)/shifter.v $(PWD)/adder.v $(PWD)/counter.v $(PWD)/reg8.v
 
 else
