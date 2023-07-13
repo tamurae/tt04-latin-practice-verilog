@@ -35,15 +35,16 @@ documentation:
 
 # Longer description of how the project works. You can use standard markdown format.
   how_it_works: |
-This 4 x 4 bit multiplier requires four clock cycles to perform the full multiplication. An FSM controls the entire operation
-(mult_control.v)
-During each cycle, a pair of 2-bit portion of the multiplicands is multiplied by a 2 x 2 multiplier (mult2x2.v).
-The multiplication result of these 2-bit slices is then accumulated (mux2.v, shifter.v, adder.v, counter.v).
-At the end of the four cycles (during the 5th cycle), the fully composed 8-bit product can be read at the output (reg8.v).
+    This 4 x 4 bit multiplier requires four clock cycles to perform the full multiplication. An FSM controls the entire 
+    operation (mult_control.v)
+    During each cycle, a pair of 2-bit portion of the multiplicands is multiplied by a 2 x 2 multiplier (mult2x2.v).
+    The multiplication result of these 2-bit slices is then accumulated (mux2.v, shifter.v, adder.v, counter.v).
+    At the end of the four cycles (during the 5th cycle), the fully composed 8-bit product can be read at the 
+    output (reg8.v).
 
 # Instructions on how someone could test your project, include things like what buttons do what and how to set the clock if needed
   how_to_test:  |
-See the test.py file in the src directory
+    See the test.py file in the src directory
 
 # A description of what the inputs do (e.g. red button, SPI CLK, SPI MOSI, etc).
   inputs:               
