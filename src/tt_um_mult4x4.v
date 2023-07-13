@@ -6,17 +6,27 @@
 
 module tt_um_mult4x4
 (
-  input         start,          // Declare control inputs: start
-                reset_a,        //    asynchronous reset
-                clk,            //    clock
-  input [3:0]   dataa,          // Declare data inputs (factors)
-                datab,
-  output        done_flag,      // Declare done_flag output
-  output [7:0]  product4x4_out, // Declare multiplier output "product4x4_out"
-  input         ena,            // will go high when the design is enabled
-                rst_n           // reset_n - low to reset
+  // TinyTapeout 4 pinout
+  input  wire [7:0] ui_in,    // Dedicated inputs - connected to the input switches
+  output wire [7:0] uo_out,   // Dedicated outputs - connected to the 7 segment display
+  input  wire [7:0] uio_in,   // IOs: Bidirectional Input path
+  output wire [7:0] uio_out,  // IOs: Bidirectional Output path
+  output wire [7:0] uio_oe,   // IOs: Bidirectional Enable path (active high: 0=input, 1=output)
+  input  wire       ena,      // will go high when the design is enabled
+  input  wire       clk,      // clock
+  input  wire       rst_n,    // reset_n - low to reset
 );
 
+  // Wires to connect to DUT
+  wire reset_a = !rst_n;
+  wire start = uio_in[0:0];
+  wire [3:0] dataa = ui_in[7:4];
+  wire [3:0] datab = ui_in[3:0];
+  wire done_flag = uio_out[7:7];
+  wire [7:0] product4x4_out = uo_out[7:0];
+  // bidirectionals: set bit 7 as output and the others as inputs
+  assign uio_oe = 8'b1000000;
+  
   // Declare internal wires to connect modules
   wire [1:0]  aout,       // u1 (mux2) output
               bout;       // u2 (mux2) output
