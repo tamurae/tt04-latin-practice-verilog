@@ -26,6 +26,7 @@ module tt_um_mult4x4
   wire [7:0] product4x4_out = uo_out[7:0];
   // bidirectionals: set bit 7 as output and the others as inputs
   assign uio_oe = 8'b1000000;
+  assign uio_out[6:0] = 7'b1111111;
   
   // Declare internal wires to connect modules
   wire [1:0]  aout,       // u1 (mux2) output
