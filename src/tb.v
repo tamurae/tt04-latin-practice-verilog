@@ -33,15 +33,16 @@ module tb ();
   wire       rst_n;    // reset_n - low to reset
 
   // Wires to connect to DUT
-  wire start = uio_in[0:0];
-  wire reset_a = !rst_n;
-  wire [3:0] dataa = ui_in[7:4];
-  wire [3:0] datab = ui_in[3:0];
-  wire done_flag = uio_out[7:7];
-  wire [7:0] product4x4_out = uo_out[7:0];
-
-  // bidirectionals: set bit 7 as output and the others as inputs
-  assign uio_oe = 8'b1000000;
+  wire start;
+  assign uio_in[0:0] = start;
+  wire [3:0] dataa;
+  assign ui_in[7:4] = dataa;
+  wire [3:0] datab;
+  assign ui_in[3:0] = datab;
+  wire done_flag;
+  assign done_flag= uio_out[7:7];
+  wire [7:0] product4x4_out;
+  assign product4x4_out = uo_out[7:0];
 
   // Instantiate DUT
   tt_um_mult4x4 mult4x4
@@ -50,14 +51,13 @@ module tb ();
         .vccd1( 1'b1),
         .vssd1( 1'b0),
     `endif
-    .start(start),
-    .reset_a(reset_a),
-    .clk(clk),
-    .dataa(dataa),
-    .datab(datab),
-    .done_flag(done_flag),
-    .product4x4_out(product4x4_out),
+    .ui_in(ui_in),
+    .uo_out(uo_out),
+    .uio_in(uio_in),
+    .uio_out(uio_out),
+    .uio_oe(uio_oe),
     .ena(ena),
+    .clk(clk),
     .rst_n(rst_n)
   );
 

@@ -22,12 +22,14 @@ module tt_um_mult4x4
   wire start = uio_in[0:0];
   wire [3:0] dataa = ui_in[7:4];
   wire [3:0] datab = ui_in[3:0];
-  wire done_flag = uio_out[7:7];
-  wire [7:0] product4x4_out = uo_out[7:0];
+  wire done_flag;
+  assign uio_out[7:7] = done_flag;
+  wire [7:0] product4x4_out;
+  assign uo_out = product4x4_out;
   // bidirectionals: set bit 7 as output and the others as inputs
   assign uio_oe = 8'b1000000;
   assign uio_out[6:0] = 7'b1111111;
-  
+
   // Declare internal wires to connect modules
   wire [1:0]  aout,       // u1 (mux2) output
               bout;       // u2 (mux2) output
